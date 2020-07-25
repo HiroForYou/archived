@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+span,
+p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Work Sans', sans-serif !important;
+}
+
+strong,
+b {
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+}
+
+.drawer-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.drawer-app-content {
+  flex: auto;
+  overflow: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.top-app-bar-fix-adjust {
+  display: flex;
+  width: 100%;
+}
+
+.sidenav-list-title {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: small;
+  padding: 0 8px;
+}
+
+$mdc-theme-primary: #212121;
+$mdc-theme-secondary: #ed4b2b;
+
+@import '@material/react-button/index';
+@import '@material/react-card/index';
+@import '@material/react-drawer/index';
+@import '@material/react-material-icon/index';
+@import '@material/react-layout-grid/index';
+@import '@material/react-list/index';
+@import '@material/react-material-icon/index';
+@import '@material/react-snackbar/index';
+@import '@material/react-top-app-bar/index';
