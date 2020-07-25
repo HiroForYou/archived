@@ -4,11 +4,11 @@
    alt="License">
 <img src="https://img.shields.io/travis/torchexpo/torchexpo?style=flat-square" alt="Build Status">
 
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Contributing](#contributing)
-* [License](#license)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Getting Started
 
@@ -17,6 +17,7 @@
 ### Installation
 
 ## Contributing
+
 We appreciate all contributions. If you are planning to contribute back bug-fixes, please do so
 without any further discussion.
 
@@ -28,4 +29,5 @@ than you might be aware of.
 Please refer our [Contribution Guide](CONTRIBUTING.md) for more details.
 
 ## License
+
 This project is licensed under Apache-2.0 as given in [LICENSE](LICENSE) file.
