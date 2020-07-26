@@ -9,6 +9,13 @@ const sideNavItems = [
     name: 'Quick Links',
     items: [
       {
+        id: 0,
+        name: 'Home',
+        image: null,
+        icon: 'home',
+        link: '/',
+      },
+      {
         id: 1,
         name: 'Collections',
         image: null,
