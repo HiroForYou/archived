@@ -8,7 +8,7 @@ const PublisherCard = (props) => {
   const { publisher } = props;
   const { name, imageLink, collectionCount, modelCount } = publisher;
   return (
-    <Card>
+    <Card outlined>
       <CardPrimaryContent>
         <small style={{ padding: '16px 16px 0px 16px' }}>
           <MaterialIcon
