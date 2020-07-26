@@ -4,42 +4,35 @@ import { Cell, Grid, Row } from '@material/react-layout-grid';
 import Card, { CardPrimaryContent } from '@material/react-card';
 import MaterialIcon from '@material/react-material-icon';
 
-const PublisherCard = (props) => {
-  const { publisher } = props;
-  const { name, imageLink, collectionCount, modelCount } = publisher;
+const ModelCard = (props) => {
+  const { model } = props;
+  const { name, description, publisher, updatedAt } = model;
   return (
     <Card outlined>
       <CardPrimaryContent>
         <small style={{ padding: '16px 16px 0px 16px' }}>
           <MaterialIcon
             style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
-            icon="people"
+            icon="visibility"
           />
-          <span>Publisher</span>
+          <span>Image Classification</span>
         </small>
         <Grid>
           <Row>
-            <Cell desktopColumns={9} phoneColumns={3} tabletColumns={6}>
+            <Cell desktopColumns={12} phoneColumns={4} tabletColumns={8}>
               <h2>{name}</h2>
-            </Cell>
-            <Cell desktopColumns={3} phoneColumns={1} tabletColumns={2}>
-              <img src={imageLink} className="publisher-image" alt={name} />
-            </Cell>
-          </Row>
-          <br />
-          <Row style={{ marginTop: '16px' }}>
-            <Cell columns={12}>
               <MaterialIcon
-                icon="collections_bookmark"
                 style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
+                icon="people"
               />
-              <span>{`${collectionCount} COLLECTIONS`}</span>
+              <span>{publisher.name}</span>
               &nbsp;&nbsp;&nbsp;&nbsp;
               <MaterialIcon
-                icon="science"
                 style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
+                icon="schedule"
               />
-              <span>{`${modelCount} MODELS`}</span>
+              <span>{updatedAt}</span>
+              <p>{description}</p>
             </Cell>
           </Row>
         </Grid>
@@ -48,23 +41,27 @@ const PublisherCard = (props) => {
   );
 };
 
-PublisherCard.propTypes = {
-  publisher: PropTypes.shape({
+ModelCard.propTypes = {
+  model: PropTypes.shape({
     name: PropTypes.string,
     description: PropTypes.string,
     imageLink: PropTypes.string,
-    collectionCount: PropTypes.number,
-    modelCount: PropTypes.number,
+    publisher: PropTypes.shape({
+      name: PropTypes.string,
+    }),
+    updatedAt: PropTypes.string,
   }),
 };
 
-PublisherCard.defaultProps = {
-  publisher: {
+ModelCard.defaultProps = {
+  model: {
     name: null,
     description: null,
     imageLink: null,
-    collectionCount: 0,
-    modelCount: 0,
+    publisher: {
+      name: null,
+    },
+    updatedAt: null,
   },
 };
-export default PublisherCard;
+export default ModelCard;
