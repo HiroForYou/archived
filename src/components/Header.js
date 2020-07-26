@@ -14,7 +14,7 @@ const Header = (props) => {
     <TopAppBar>
       <TopAppBarRow>
         <TopAppBarSection align="start">
-          <TopAppBarIcon tabIndex={0}>
+          <TopAppBarIcon navIcon tabIndex={0}>
             <MaterialIcon
               icon="menu"
               onClick={() => setIsDrawerOpen(!isDrawerOpen)}
