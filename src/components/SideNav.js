@@ -1,13 +1,109 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Drawer, { DrawerContent } from '@material/react-drawer';
-import List, {
-  ListItem,
-  ListItemGraphic,
-  ListItemText,
-  ListDivider,
-} from '@material/react-list';
-import MaterialIcon from '@material/react-material-icon';
+import List, { ListDivider } from '@material/react-list';
+import SideNavItem from './SideNavItem';
+
+const sideNavItems = [
+  {
+    name: 'Quick Links',
+    items: [
+      {
+        id: 1,
+        name: 'Collections',
+        image: null,
+        icon: 'collections_bookmark',
+        link: '/collections',
+      },
+      { id: 2, name: 'Models', image: null, icon: 'science', link: '/models' },
+      {
+        id: 3,
+        name: 'Publishers',
+        image: null,
+        icon: 'people',
+        link: '/publishers',
+      },
+    ],
+  },
+  {
+    name: 'Research Areas',
+    items: [
+      {
+        id: 4,
+        name: 'Vision',
+        image: null,
+        icon: 'visibility',
+        link: '/search?researchArea=Vision',
+      },
+      {
+        id: 5,
+        name: 'Nlp',
+        image: null,
+        icon: 'chat',
+        link: '/search?researchArea=Nlp',
+      },
+      {
+        id: 6,
+        name: 'Audio',
+        image: null,
+        icon: 'audiotrack',
+        link: '/search?researchArea=Audio',
+      },
+      {
+        id: 7,
+        name: 'Generative',
+        image: null,
+        icon: 'grid_on',
+        link: '/search?researchArea=Generative',
+      },
+    ],
+  },
+  {
+    name: 'Model Format',
+    items: [
+      {
+        id: 8,
+        name: 'TorchScript',
+        icon: null,
+        image: 'torchscript.png',
+        link: '/search?modelFormat=torchscript',
+      },
+      {
+        id: 9,
+        name: 'ONNX',
+        icon: null,
+        image: 'onnx.png',
+        link: '/search?modelFormat=onnx',
+      },
+    ],
+  },
+  {
+    name: 'Support',
+    items: [
+      {
+        id: 10,
+        name: 'Intro to TorchExpo',
+        image: null,
+        icon: null,
+        link: '/support/intro-torchexpo',
+      },
+      {
+        id: 11,
+        name: 'Intro to PyTorch',
+        image: null,
+        icon: null,
+        link: '/support/intro-pytorch',
+      },
+      {
+        id: 12,
+        name: 'Publishing',
+        image: null,
+        icon: null,
+        link: '/support/publishing',
+      },
+    ],
+  },
+];
 
 const SideNav = (props) => {
   const { isDrawerOpen } = props;
@@ -16,42 +112,21 @@ const SideNav = (props) => {
     <Drawer dismissible open={isDrawerOpen}>
       <DrawerContent>
         <List singleSelection selectedIndex={selectedIndex}>
-          <span className="sidenav-list-title">Quick Links</span>
-          <ListItem onClick={() => setSelectedIndex(0)}>
-            <ListItemGraphic
-              graphic={<MaterialIcon icon="collections_bookmark" />}
-            />
-            <ListItemText primaryText="Collections" />
-          </ListItem>
-          <ListItem onClick={() => setSelectedIndex(1)}>
-            <ListItemGraphic graphic={<MaterialIcon icon="bookmark" />} />
-            <ListItemText primaryText="Models" />
-          </ListItem>
-          <ListItem onClick={() => setSelectedIndex(2)}>
-            <ListItemGraphic graphic={<MaterialIcon icon="people" />} />
-            <ListItemText primaryText="Publishers" />
-          </ListItem>
-          <ListDivider />
-        </List>
-        <List singleSelection selectedIndex={selectedIndex}>
-          <span className="sidenav-list-title">Research Areas</span>
-          <ListItem onClick={() => setSelectedIndex(0)}>
-            <ListItemGraphic graphic={<MaterialIcon icon="insert_photo" />} />
-            <ListItemText primaryText="Vision" />
-          </ListItem>
-          <ListItem onClick={() => setSelectedIndex(1)}>
-            <ListItemGraphic graphic={<MaterialIcon icon="chat" />} />
-            <ListItemText primaryText="Nlp" />
-          </ListItem>
-          <ListItem onClick={() => setSelectedIndex(2)}>
-            <ListItemGraphic graphic={<MaterialIcon icon="audiotrack" />} />
-            <ListItemText primaryText="Audio" />
-          </ListItem>
-          <ListItem onClick={() => setSelectedIndex(2)}>
-            <ListItemGraphic graphic={<MaterialIcon icon="grid_on" />} />
-            <ListItemText primaryText="Generative" />
-          </ListItem>
-          <ListDivider />
+          {sideNavItems.map((section) => (
+            <div key={section.name}>
+              <span className="sidenav-list-title">{section.name}</span>
+              {section.items.map((item) => (
+                <SideNavItem
+                  key={item.id}
+                  idx={item.id}
+                  selectedIndex={selectedIndex}
+                  setSelectedIndex={setSelectedIndex}
+                  item={item}
+                />
+              ))}
+              {section.name !== 'Support' ? <ListDivider /> : null}
+            </div>
+          ))}
         </List>
       </DrawerContent>
     </Drawer>

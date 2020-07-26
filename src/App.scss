@@ -45,8 +45,12 @@ h5 {
 .sidenav-list-title {
   font-weight: 500;
   text-transform: uppercase;
-  font-size: small;
+  font-size: 0.75rem;
   padding: 0 8px;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 $mdc-theme-primary: #212121;
