@@ -28,14 +28,13 @@ const PublisherCard = (props) => {
           </Row>
           <br />
           <Row style={{ marginTop: '16px' }}>
-            <Cell desktopColumns={6} phoneColumns={2} tabletColumns={4}>
+            <Cell columns={12}>
               <MaterialIcon
                 icon="collections_bookmark"
                 style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
               />
               <span>{`${collectionCount} COLLECTIONS`}</span>
-            </Cell>
-            <Cell desktopColumns={5} phoneColumns={2} tabletColumns={4}>
+              &nbsp;&nbsp;&nbsp;&nbsp;
               <MaterialIcon
                 icon="science"
                 style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
