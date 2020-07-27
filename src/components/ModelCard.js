@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Cell, Grid, Row } from '@material/react-layout-grid';
+import { Cell, Row } from '@material/react-layout-grid';
 import Card, { CardPrimaryContent } from '@material/react-card';
 import MaterialIcon from '@material/react-material-icon';
 
@@ -17,25 +17,25 @@ const ModelCard = (props) => {
           />
           <span>Image Classification</span>
         </small>
-        <Grid>
-          <Row>
-            <Cell desktopColumns={12} phoneColumns={4} tabletColumns={8}>
-              <h2>{name}</h2>
-              <MaterialIcon
-                style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
-                icon="people"
-              />
-              <span>{publisher.name}</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <MaterialIcon
-                style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
-                icon="schedule"
-              />
-              <span>{updatedAt}</span>
-              <p>{description}</p>
-            </Cell>
-          </Row>
-        </Grid>
+        <Row style={{ padding: '16px 24px 24px 24px' }}>
+          <Cell desktopColumns={12} phoneColumns={4} tabletColumns={8}>
+            <h2>{name}</h2>
+            <MaterialIcon
+              className="inherit-color"
+              style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
+              icon="people"
+            />
+            <span>{publisher.name}</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <MaterialIcon
+              className="inherit-color"
+              style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
+              icon="schedule"
+            />
+            <span>{updatedAt}</span>
+            <p>{description}</p>
+          </Cell>
+        </Row>
       </CardPrimaryContent>
     </Card>
   );

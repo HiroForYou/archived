@@ -17,6 +17,7 @@ const Header = (props) => {
         <TopAppBarSection align="start">
           <TopAppBarIcon navIcon tabIndex={0}>
             <MaterialIcon
+              className="inherit-color"
               hasRipple
               icon="menu"
               onClick={() => setIsDrawerOpen(!isDrawerOpen)}

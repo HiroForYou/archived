@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Cell, Grid, Row } from '@material/react-layout-grid';
+import { Cell, Row } from '@material/react-layout-grid';
 import Card, { CardPrimaryContent } from '@material/react-card';
 import MaterialIcon from '@material/react-material-icon';
 
@@ -17,32 +17,32 @@ const PublisherCard = (props) => {
           />
           <span>Publisher</span>
         </small>
-        <Grid>
-          <Row>
-            <Cell desktopColumns={9} phoneColumns={3} tabletColumns={6}>
-              <h2>{name}</h2>
-            </Cell>
-            <Cell desktopColumns={3} phoneColumns={1} tabletColumns={2}>
-              <img src={imageLink} className="publisher-image" alt={name} />
-            </Cell>
-          </Row>
-          <br />
-          <Row style={{ marginTop: '16px' }}>
-            <Cell columns={12}>
-              <MaterialIcon
-                icon="collections_bookmark"
-                style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
-              />
-              <span>{`${collectionCount} COLLECTIONS`}</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <MaterialIcon
-                icon="science"
-                style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
-              />
-              <span>{`${modelCount} MODELS`}</span>
-            </Cell>
-          </Row>
-        </Grid>
+        <Row style={{ padding: '16px 24px 0px 24px' }}>
+          <Cell desktopColumns={9} phoneColumns={3} tabletColumns={6}>
+            <h2>{name}</h2>
+          </Cell>
+          <Cell desktopColumns={3} phoneColumns={1} tabletColumns={2}>
+            <img src={imageLink} className="publisher-image" alt={name} />
+          </Cell>
+        </Row>
+        <br />
+        <Row style={{ padding: '0px 24px 24px 24px' }}>
+          <Cell columns={12}>
+            <MaterialIcon
+              className="inherit-color"
+              icon="collections_bookmark"
+              style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
+            />
+            <span>{`${collectionCount} COLLECTIONS`}</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <MaterialIcon
+              className="inherit-color"
+              icon="science"
+              style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
+            />
+            <span>{`${modelCount} MODELS`}</span>
+          </Cell>
+        </Row>
       </CardPrimaryContent>
     </Card>
   );

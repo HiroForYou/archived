@@ -58,6 +58,10 @@ a:visited {
   color: inherit;
 }
 
+.material-icons:not(.inherit-color) {
+  color: #ed4b2b !important;
+}
+
 $mdc-theme-primary: #212121;
 $mdc-theme-secondary: #ed4b2b;
 

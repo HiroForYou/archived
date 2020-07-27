@@ -125,7 +125,7 @@ const SideNav = (props) => {
   return (
     <Drawer dismissible open={isDrawerOpen}>
       <DrawerContent>
-        <List singleSelection selectedIndex={selectedIndex}>
+        <List wrapFocus singleSelection selectedIndex={selectedIndex}>
           {sideNavItems.map((section) => (
             <div key={section.name}>
               <span className="sidenav-list-title">{section.name}</span>
