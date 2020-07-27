@@ -15,13 +15,13 @@ const sideNavItems = [
         icon: 'home',
         link: '/',
       },
-      {
-        id: 1,
-        name: 'Collections',
-        image: null,
-        icon: 'collections_bookmark',
-        link: '/collections',
-      },
+      // {
+      //   id: 1,
+      //   name: 'Collections',
+      //   image: null,
+      //   icon: 'collections_bookmark',
+      //   link: '/collections',
+      // },
       { id: 2, name: 'Models', image: null, icon: 'science', link: '/models' },
       {
         id: 3,

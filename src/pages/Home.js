@@ -9,7 +9,8 @@ const Home = () => {
           <h1>Welcome to TorchExpo</h1>
           <p>
             Collection of trained PyTorch models all under same zoo and ready
-            for deployment. Thanks for playing a part in our community.
+            for deployment. TorchExpo is an open initiative and also a project
+            created during the PyTorch Summer Hackathon 2020.
           </p>
         </Cell>
       </Row>

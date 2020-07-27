@@ -20,14 +20,14 @@ const ModelCard = (props) => {
               style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
               icon="people"
             />
-            <span>{publisher.name}</span>
+            <span>{publisher.length > 0 && publisher[0].name}</span>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <MaterialIcon
               className="inherit-color"
               style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
               icon="schedule"
             />
-            <span>{updatedAt}</span>
+            <span>{new Date(updatedAt).toLocaleDateString()}</span>
             <p>{description}</p>
           </Cell>
         </Row>
@@ -41,9 +41,11 @@ ModelCard.propTypes = {
     name: PropTypes.string,
     description: PropTypes.string,
     imageLink: PropTypes.string,
-    publisher: PropTypes.shape({
-      name: PropTypes.string,
-    }),
+    publisher: PropTypes.shape([
+      {
+        name: PropTypes.string,
+      },
+    ]),
     updatedAt: PropTypes.string,
   }),
 };
@@ -53,9 +55,11 @@ ModelCard.defaultProps = {
     name: null,
     description: null,
     imageLink: null,
-    publisher: {
-      name: null,
-    },
+    publisher: [
+      {
+        name: null,
+      },
+    ],
     updatedAt: null,
   },
 };

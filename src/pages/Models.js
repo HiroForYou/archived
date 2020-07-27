@@ -1,27 +1,55 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Cell, Grid, Row } from '@material/react-layout-grid';
-import ModelCard from '../components/ModelCard';
+import LinearProgress from '@material/react-linear-progress';
+import ModelCard from '../components/cards/ModelCard';
 
 const Models = () => {
-  const model = {
-    name: 'ResNet-18',
-    description:
-      'Encoder of greater-than-word length text trained on a variety of data',
-    publisher: {
-      name: 'Facebook Research',
-    },
-    imageLink: 'https://avatars3.githubusercontent.com/u/16943930?s=200&v=4',
-    updatedAt: '04/22/2020',
-  };
+  const [models, setModels] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('https://torchexpo.herokuapp.com/v1/models', {
+      method: 'GET',
+      headers: {
+        Accept: 'application/vnd.torchexpo+json;version=1',
+      },
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setModels(response);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setIsLoading(false);
+      });
+  }, []);
+
   return (
     <Grid>
       <Row>
-        <Cell desktopColumns={6} phoneColumns={4} tabletColumns={8}>
-          <ModelCard model={model} />
-        </Cell>
-        <Cell desktopColumns={6} phoneColumns={4} tabletColumns={8}>
-          <ModelCard model={model} />
-        </Cell>
+        {isLoading && (
+          <Cell
+            desktopColumns={6}
+            tabletColumns={4}
+            phoneColumns={3}
+            align="middle"
+          >
+            <LinearProgress indeterminate />
+            <p align="center">Loading Models ...</p>
+          </Cell>
+        )}
+        {models.length > 0 &&
+          models.map((model) => (
+            <Cell
+              key={model._id}
+              desktopColumns={6}
+              phoneColumns={4}
+              tabletColumns={8}
+            >
+              <ModelCard model={model} />
+            </Cell>
+          ))}
       </Row>
     </Grid>
   );

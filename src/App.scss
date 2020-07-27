@@ -49,7 +49,6 @@ h5 {
 
 .publisher-image {
   width: 100%;
-  border-radius: 50%;
 }
 
 a,
@@ -70,6 +69,7 @@ $mdc-theme-secondary: #ed4b2b;
 @import '@material/react-drawer/index';
 @import '@material/react-material-icon/index';
 @import '@material/react-layout-grid/index';
+@import '@material/react-linear-progress/index';
 @import '@material/react-list/index';
 @import '@material/react-material-icon/index';
 @import '@material/react-ripple/index';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Cell, Grid, Row } from '@material/react-layout-grid';
-import CollectionCard from '../components/CollectionCard';
+import CollectionCard from '../components/cards/CollectionCard';
 
 const Collections = () => {
   const collection = {

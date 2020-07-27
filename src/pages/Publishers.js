@@ -1,24 +1,55 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Cell, Grid, Row } from '@material/react-layout-grid';
-import PublisherCard from '../components/PublisherCard';
+import LinearProgress from '@material/react-linear-progress';
+import PublisherCard from '../components/cards/PublisherCard';
 
 const Publishers = () => {
-  const publisher = {
-    name: 'Facebook Research',
-    description: '',
-    collectionCount: 12,
-    modelCount: 43,
-    imageLink: 'https://avatars3.githubusercontent.com/u/16943930?s=200&v=4',
-  };
+  const [publishers, setPublishers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('https://torchexpo.herokuapp.com/v1/publishers', {
+      method: 'GET',
+      headers: {
+        Accept: 'application/vnd.torchexpo+json;version=1',
+      },
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setPublishers(response);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setIsLoading(false);
+      });
+  }, []);
+
   return (
-    <Grid>
+    <Grid align="center">
       <Row>
-        <Cell desktopColumns={6} phoneColumns={4} tabletColumns={8}>
-          <PublisherCard publisher={publisher} />
-        </Cell>
-        <Cell desktopColumns={6} phoneColumns={4} tabletColumns={8}>
-          <PublisherCard publisher={publisher} />
-        </Cell>
+        {isLoading && (
+          <Cell
+            desktopColumns={6}
+            tabletColumns={4}
+            phoneColumns={3}
+            align="middle"
+          >
+            <LinearProgress indeterminate />
+            <p align="center">Loading Publishers ...</p>
+          </Cell>
+        )}
+        {publishers.length > 0 &&
+          publishers.map((publisher) => (
+            <Cell
+              key={publisher._id}
+              desktopColumns={6}
+              phoneColumns={4}
+              tabletColumns={8}
+            >
+              <PublisherCard publisher={publisher} />
+            </Cell>
+          ))}
       </Row>
     </Grid>
   );
