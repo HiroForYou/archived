@@ -52,8 +52,10 @@ h5 {
   border-radius: 50%;
 }
 
-a {
+a,
+a:visited {
   text-decoration: none !important;
+  color: inherit;
 }
 
 $mdc-theme-primary: #212121;
@@ -66,5 +68,6 @@ $mdc-theme-secondary: #ed4b2b;
 @import '@material/react-layout-grid/index';
 @import '@material/react-list/index';
 @import '@material/react-material-icon/index';
+@import '@material/react-ripple/index';
 @import '@material/react-snackbar/index';
 @import '@material/react-top-app-bar/index';

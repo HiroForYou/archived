@@ -7,6 +7,7 @@ import TopAppBar, {
   TopAppBarTitle,
 } from '@material/react-top-app-bar';
 import MaterialIcon from '@material/react-material-icon';
+import { Link } from 'react-router-dom';
 
 const Header = (props) => {
   const { isDrawerOpen, setIsDrawerOpen } = props;
@@ -16,11 +17,14 @@ const Header = (props) => {
         <TopAppBarSection align="start">
           <TopAppBarIcon navIcon tabIndex={0}>
             <MaterialIcon
+              hasRipple
               icon="menu"
               onClick={() => setIsDrawerOpen(!isDrawerOpen)}
             />
           </TopAppBarIcon>
-          <TopAppBarTitle>TorchExpo</TopAppBarTitle>
+          <Link to="/">
+            <TopAppBarTitle>TorchExpo</TopAppBarTitle>
+          </Link>
         </TopAppBarSection>
       </TopAppBarRow>
     </TopAppBar>
