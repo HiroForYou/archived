@@ -51,6 +51,12 @@ h5 {
   width: 100%;
 }
 
+.truncate {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 a,
 a:visited {
   text-decoration: none !important;

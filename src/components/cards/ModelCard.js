@@ -7,11 +7,11 @@ import CardType from './CardType';
 
 const ModelCard = (props) => {
   const { model } = props;
-  const { name, description, publisher, updatedAt } = model;
+  const { name, description, task, publisher, updatedAt } = model;
   return (
     <Card outlined>
       <CardPrimaryContent>
-        <CardType name="Image Classification" icon="visibility" />
+        <CardType name={task[0].name} icon="visibility" />
         <Row style={{ padding: '16px' }}>
           <Cell desktopColumns={12} phoneColumns={4} tabletColumns={8}>
             <h2>{name}</h2>
@@ -28,7 +28,7 @@ const ModelCard = (props) => {
               icon="schedule"
             />
             <span>{new Date(updatedAt).toLocaleDateString()}</span>
-            <p>{description}</p>
+            <p className="truncate">{description}</p>
           </Cell>
         </Row>
       </CardPrimaryContent>
@@ -41,6 +41,11 @@ ModelCard.propTypes = {
     name: PropTypes.string,
     description: PropTypes.string,
     imageLink: PropTypes.string,
+    task: PropTypes.shape([
+      {
+        name: PropTypes.string,
+      },
+    ]),
     publisher: PropTypes.shape([
       {
         name: PropTypes.string,
@@ -55,6 +60,11 @@ ModelCard.defaultProps = {
     name: null,
     description: null,
     imageLink: null,
+    task: [
+      {
+        name: null,
+      },
+    ],
     publisher: [
       {
         name: null,

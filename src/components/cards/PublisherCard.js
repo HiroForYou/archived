@@ -28,14 +28,16 @@ const PublisherCard = (props) => {
               icon="collections_bookmark"
               style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
             />
-            <span>{`${collectionCount} COLLECTIONS`}</span>
+            <span>
+              {`${collectionCount} COLLECTION${collectionCount > 1 ? 'S' : ''}`}
+            </span>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <MaterialIcon
               className="inherit-color"
               icon="science"
               style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
             />
-            <span>{`${modelCount} MODELS`}</span>
+            <span>{`${modelCount} MODEL${modelCount > 1 ? 'S' : ''}`}</span>
           </Cell>
         </Row>
       </CardPrimaryContent>
