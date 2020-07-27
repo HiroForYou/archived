@@ -8,9 +8,11 @@ import Header from './components/Header';
 import './App.scss';
 import SideNav from './components/SideNav';
 import Error from './pages/Error';
-import Models from './pages/Models';
+import Models from './pages/models/Models';
+import Model from './pages/models/Model';
 import Collections from './pages/Collections';
-import Publishers from './pages/Publishers';
+import Publishers from './pages/publishers/Publishers';
+import Publisher from './pages/publishers/Publisher';
 import Search from './pages/Search';
 import Publishing from './pages/support/Publishing';
 import Developers from './pages/support/Developers';
@@ -29,7 +31,9 @@ function App() {
               <Route path="/" exact component={Home} />
 
               <Route path="/collections" exact component={Collections} />
+              <Route path="/models/:id" exact component={Model} />
               <Route path="/models" exact component={Models} />
+              <Route path="/publishers/:id" exact component={Publisher} />
               <Route path="/publishers" exact component={Publishers} />
               <Route path="/search" exact component={Search} />
 

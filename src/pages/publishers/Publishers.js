@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Cell, Grid, Row } from '@material/react-layout-grid';
 import LinearProgress from '@material/react-linear-progress';
-import PublisherCard from '../components/cards/PublisherCard';
+import { Link } from 'react-router-dom';
+import PublisherCard from '../../components/cards/PublisherCard';
 
 const Publishers = () => {
   const [publishers, setPublishers] = useState([]);
@@ -47,7 +48,9 @@ const Publishers = () => {
               phoneColumns={4}
               tabletColumns={8}
             >
-              <PublisherCard publisher={publisher} />
+              <Link to={`/publishers/${publisher._id}`}>
+                <PublisherCard publisher={publisher} />
+              </Link>
             </Cell>
           ))}
       </Row>

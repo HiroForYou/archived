@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Cell, Grid, Row } from '@material/react-layout-grid';
 import LinearProgress from '@material/react-linear-progress';
-import ModelCard from '../components/cards/ModelCard';
+import { Link } from 'react-router-dom';
+import ModelCard from '../../components/cards/ModelCard';
 
 const Models = () => {
   const [models, setModels] = useState([]);
@@ -47,7 +48,9 @@ const Models = () => {
               phoneColumns={4}
               tabletColumns={8}
             >
-              <ModelCard model={model} />
+              <Link to={`/models/${model._id}`}>
+                <ModelCard model={model} />
+              </Link>
             </Cell>
           ))}
       </Row>
