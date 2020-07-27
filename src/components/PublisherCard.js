@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Cell, Row } from '@material/react-layout-grid';
 import Card, { CardPrimaryContent } from '@material/react-card';
 import MaterialIcon from '@material/react-material-icon';
+import CardType from './CardType';
 
 const PublisherCard = (props) => {
   const { publisher } = props;
@@ -10,14 +11,8 @@ const PublisherCard = (props) => {
   return (
     <Card outlined>
       <CardPrimaryContent>
-        <small style={{ padding: '16px 16px 0px 16px' }}>
-          <MaterialIcon
-            style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
-            icon="people"
-          />
-          <span>Publisher</span>
-        </small>
-        <Row style={{ padding: '16px 24px 0px 24px' }}>
+        <CardType name="Publisher" icon="people" />
+        <Row style={{ padding: '16px 16px 0px 16px' }}>
           <Cell desktopColumns={9} phoneColumns={3} tabletColumns={6}>
             <h2>{name}</h2>
           </Cell>
@@ -26,7 +21,7 @@ const PublisherCard = (props) => {
           </Cell>
         </Row>
         <br />
-        <Row style={{ padding: '0px 24px 24px 24px' }}>
+        <Row style={{ padding: '0px 16px 16px 16px' }}>
           <Cell columns={12}>
             <MaterialIcon
               className="inherit-color"
@@ -67,4 +62,5 @@ PublisherCard.defaultProps = {
     modelCount: 0,
   },
 };
+
 export default PublisherCard;

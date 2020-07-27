@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Cell, Row } from '@material/react-layout-grid';
 import Card, { CardPrimaryContent } from '@material/react-card';
 import MaterialIcon from '@material/react-material-icon';
+import CardType from './CardType';
 
 const ModelCard = (props) => {
   const { model } = props;
@@ -10,14 +11,8 @@ const ModelCard = (props) => {
   return (
     <Card outlined>
       <CardPrimaryContent>
-        <small style={{ padding: '16px 16px 0px 16px' }}>
-          <MaterialIcon
-            style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
-            icon="visibility"
-          />
-          <span>Image Classification</span>
-        </small>
-        <Row style={{ padding: '16px 24px 24px 24px' }}>
+        <CardType name="Image Classification" icon="visibility" />
+        <Row style={{ padding: '16px' }}>
           <Cell desktopColumns={12} phoneColumns={4} tabletColumns={8}>
             <h2>{name}</h2>
             <MaterialIcon
