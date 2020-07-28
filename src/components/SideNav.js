@@ -22,9 +22,9 @@ const sideNavItems = [
       //   icon: 'collections_bookmark',
       //   link: '/collections',
       // },
-      { id: 2, name: 'Models', image: null, icon: 'science', link: '/models' },
+      { id: 1, name: 'Models', image: null, icon: 'science', link: '/models' },
       {
-        id: 3,
+        id: 2,
         name: 'Publishers',
         image: null,
         icon: 'people',
@@ -36,28 +36,28 @@ const sideNavItems = [
     name: 'Research Areas',
     items: [
       {
-        id: 4,
+        id: 3,
         name: 'Vision',
         image: null,
         icon: 'visibility',
         link: '/search?researchArea=Vision',
       },
       {
-        id: 5,
+        id: 4,
         name: 'Nlp',
         image: null,
         icon: 'chat',
         link: '/search?researchArea=Nlp',
       },
       {
-        id: 6,
+        id: 5,
         name: 'Audio',
         image: null,
         icon: 'audiotrack',
         link: '/search?researchArea=Audio',
       },
       {
-        id: 7,
+        id: 6,
         name: 'Generative',
         image: null,
         icon: 'grid_on',
@@ -69,14 +69,14 @@ const sideNavItems = [
     name: 'Model Format',
     items: [
       {
-        id: 8,
+        id: 7,
         name: 'TorchScript',
         icon: null,
         image: 'torchscript.png',
         link: '/search?modelFormat=torchscript',
       },
       {
-        id: 9,
+        id: 8,
         name: 'ONNX',
         icon: null,
         image: 'onnx.png',
@@ -88,28 +88,28 @@ const sideNavItems = [
     name: 'Support',
     items: [
       {
-        id: 10,
+        id: 9,
         name: 'About',
         image: null,
         icon: null,
         link: '/about',
       },
       {
-        id: 11,
+        id: 10,
         name: 'Publishing',
         image: null,
         icon: null,
         link: '/publishing',
       },
       {
-        id: 12,
+        id: 11,
         name: 'Contact us',
         image: null,
         icon: null,
         link: '/contact',
       },
       {
-        id: 13,
+        id: 12,
         name: 'Developers',
         image: null,
         icon: null,
@@ -120,8 +120,10 @@ const sideNavItems = [
 ];
 
 const SideNav = (props) => {
-  const { isDrawerOpen } = props;
+  const { drawerAction } = props;
+  const { isDrawerOpen } = drawerAction;
   const [selectedIndex, setSelectedIndex] = useState(0);
+
   return (
     <Drawer dismissible open={isDrawerOpen}>
       <DrawerContent>
@@ -133,8 +135,8 @@ const SideNav = (props) => {
                 <SideNavItem
                   key={item.id}
                   idx={item.id}
-                  selectedIndex={selectedIndex}
-                  setSelectedIndex={setSelectedIndex}
+                  selectedIndexAction={{ selectedIndex, setSelectedIndex }}
+                  drawerAction={drawerAction}
                   item={item}
                 />
               ))}
@@ -148,11 +150,17 @@ const SideNav = (props) => {
 };
 
 SideNav.propTypes = {
-  isDrawerOpen: PropTypes.bool,
+  drawerAction: PropTypes.shape({
+    isDrawerOpen: PropTypes.bool,
+    setIsDrawerOpen: PropTypes.func,
+  }),
 };
 
 SideNav.defaultProps = {
-  isDrawerOpen: false,
+  drawerAction: {
+    isDrawerOpen: false,
+    setIsDrawerOpen: () => null,
+  },
 };
 
 export default SideNav;

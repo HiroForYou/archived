@@ -11,7 +11,7 @@ const PublisherCard = (props) => {
   return (
     <Card outlined>
       <CardPrimaryContent>
-        <CardType name="Publisher" icon="people" />
+        <CardType name="Publisher" icon="people" padding="16px 16px 0px 16px" />
         <Row style={{ padding: '16px 16px 0px 16px' }}>
           <Cell desktopColumns={9} phoneColumns={3} tabletColumns={6}>
             <h2>{name}</h2>

@@ -11,7 +11,11 @@ const CollectionCard = (props) => {
   return (
     <Card outlined>
       <CardPrimaryContent>
-        <CardType name="Collection" icon="collections_bookmark" />
+        <CardType
+          name="Collection"
+          icon="collections_bookmark"
+          padding="16px 16px 0px 16px"
+        />
         <Row style={{ padding: '16px' }}>
           <Cell desktopColumns={12} phoneColumns={4} tabletColumns={8}>
             <h2>{name}</h2>

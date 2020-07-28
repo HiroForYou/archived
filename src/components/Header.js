@@ -10,7 +10,9 @@ import MaterialIcon from '@material/react-material-icon';
 import { Link } from 'react-router-dom';
 
 const Header = (props) => {
-  const { isDrawerOpen, setIsDrawerOpen } = props;
+  const { drawerAction } = props;
+  const { isDrawerOpen, setIsDrawerOpen } = drawerAction;
+
   return (
     <TopAppBar>
       <TopAppBarRow>
@@ -33,13 +35,17 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-  isDrawerOpen: PropTypes.bool,
-  setIsDrawerOpen: PropTypes.func,
+  drawerAction: PropTypes.shape({
+    isDrawerOpen: PropTypes.bool,
+    setIsDrawerOpen: PropTypes.func,
+  }),
 };
 
 Header.defaultProps = {
-  isDrawerOpen: false,
-  setIsDrawerOpen: () => null,
+  drawerAction: {
+    isDrawerOpen: false,
+    setIsDrawerOpen: () => null,
+  },
 };
 
 export default Header;

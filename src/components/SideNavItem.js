@@ -5,13 +5,18 @@ import MaterialIcon from '@material/react-material-icon';
 import { Link } from 'react-router-dom';
 
 const SideNavItem = (props) => {
-  const { selectedIndex, setSelectedIndex, item } = props;
+  const { selectedIndexAction, drawerAction, item } = props;
+  const { selectedIndex, setSelectedIndex } = selectedIndexAction;
+  const { isDrawerOpen, setIsDrawerOpen } = drawerAction;
   const { id, name, image, icon, link } = item;
   return (
     <Link to={link}>
       <ListItem
         selected={id === selectedIndex}
-        onClick={() => setSelectedIndex(id)}
+        onClick={() => {
+          setSelectedIndex(id);
+          setIsDrawerOpen(!isDrawerOpen);
+        }}
       >
         {icon ? (
           <ListItemGraphic graphic={<MaterialIcon icon={icon} />} />
@@ -32,8 +37,14 @@ const SideNavItem = (props) => {
 };
 
 SideNavItem.propTypes = {
-  selectedIndex: PropTypes.number,
-  setSelectedIndex: PropTypes.func,
+  drawerAction: PropTypes.shape({
+    isDrawerOpen: PropTypes.bool,
+    setIsDrawerOpen: PropTypes.func,
+  }),
+  selectedIndexAction: PropTypes.shape({
+    selectedIndex: PropTypes.number,
+    setSelectedIndex: PropTypes.func,
+  }),
   item: PropTypes.shape({
     id: PropTypes.number,
     icon: PropTypes.string,
@@ -44,8 +55,14 @@ SideNavItem.propTypes = {
 };
 
 SideNavItem.defaultProps = {
-  selectedIndex: -1,
-  setSelectedIndex: () => null,
+  drawerAction: {
+    isDrawerOpen: false,
+    setIsDrawerOpen: () => null,
+  },
+  selectedIndexAction: {
+    selectedIndex: -1,
+    setSelectedIndex: () => null,
+  },
   item: {
     id: 1,
     icon: null,

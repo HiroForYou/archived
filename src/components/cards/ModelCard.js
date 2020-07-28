@@ -11,7 +11,11 @@ const ModelCard = (props) => {
   return (
     <Card outlined>
       <CardPrimaryContent>
-        <CardType name={task[0].name} icon="visibility" />
+        <CardType
+          name={task[0].name}
+          icon="visibility"
+          padding="16px 16px 0px 16px"
+        />
         <Row style={{ padding: '16px' }}>
           <Cell desktopColumns={12} phoneColumns={4} tabletColumns={8}>
             <h2>{name}</h2>
@@ -41,16 +45,16 @@ ModelCard.propTypes = {
     name: PropTypes.string,
     description: PropTypes.string,
     imageLink: PropTypes.string,
-    task: PropTypes.shape([
-      {
+    task: PropTypes.arrayOf(
+      PropTypes.shape({
         name: PropTypes.string,
-      },
-    ]),
-    publisher: PropTypes.shape([
-      {
+      })
+    ),
+    publisher: PropTypes.arrayOf(
+      PropTypes.shape({
         name: PropTypes.string,
-      },
-    ]),
+      })
+    ),
     updatedAt: PropTypes.string,
   }),
 };

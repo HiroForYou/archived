@@ -23,9 +23,9 @@ function App() {
   return (
     <Router>
       <div className="drawer-container">
-        <Header isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
+        <Header drawerAction={{ isDrawerOpen, setIsDrawerOpen }} />
         <TopAppBarFixedAdjust className="top-app-bar-fix-adjust">
-          <SideNav isDrawerOpen={isDrawerOpen} />
+          <SideNav drawerAction={{ isDrawerOpen, setIsDrawerOpen }} />
           <DrawerAppContent className="drawer-app-content">
             <Switch>
               <Route path="/" exact component={Home} />
