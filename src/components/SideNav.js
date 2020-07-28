@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
 import Drawer, { DrawerContent } from '@material/react-drawer';
 import List, { ListDivider } from '@material/react-list';
+import { useLocation } from 'react-router-dom';
 import SideNavItem from './SideNavItem';
 
 const sideNavItems = [
@@ -119,26 +119,37 @@ const sideNavItems = [
   },
 ];
 
-const SideNav = (props) => {
-  const { drawerAction } = props;
-  const { isDrawerOpen } = drawerAction;
-  const [selectedIndex, setSelectedIndex] = useState(0);
+const getSelectedIndex = (path) => {
+  const selectedItem = []
+    .concat(...sideNavItems.map((section) => section.items))
+    .find((item) => item.link === path);
+  return selectedItem ? selectedItem.id : -1;
+};
+
+const SideNav = () => {
+  const [isSideNavOpen, setIsSideNavOpen] = useState(true);
+  const selectedIndex = getSelectedIndex(useLocation().pathname);
+
+  useEffect(() => {
+    function handleOnClick() {
+      setIsSideNavOpen(!isSideNavOpen);
+    }
+
+    window.addEventListener('sidenav', handleOnClick);
+    return () => {
+      window.removeEventListener('sidenav', handleOnClick);
+    };
+  }, [isSideNavOpen]);
 
   return (
-    <Drawer dismissible open={isDrawerOpen}>
+    <Drawer dismissible open={isSideNavOpen}>
       <DrawerContent>
         <List wrapFocus singleSelection selectedIndex={selectedIndex}>
           {sideNavItems.map((section) => (
             <div key={section.name}>
               <span className="sidenav-list-title">{section.name}</span>
               {section.items.map((item) => (
-                <SideNavItem
-                  key={item.id}
-                  idx={item.id}
-                  selectedIndexAction={{ selectedIndex, setSelectedIndex }}
-                  drawerAction={drawerAction}
-                  item={item}
-                />
+                <SideNavItem key={item.id} idx={item.id} item={item} />
               ))}
               {section.name !== 'Support' ? <ListDivider /> : null}
             </div>
@@ -147,20 +158,6 @@ const SideNav = (props) => {
       </DrawerContent>
     </Drawer>
   );
-};
-
-SideNav.propTypes = {
-  drawerAction: PropTypes.shape({
-    isDrawerOpen: PropTypes.bool,
-    setIsDrawerOpen: PropTypes.func,
-  }),
-};
-
-SideNav.defaultProps = {
-  drawerAction: {
-    isDrawerOpen: false,
-    setIsDrawerOpen: () => null,
-  },
 };
 
 export default SideNav;

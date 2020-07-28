@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { TopAppBarFixedAdjust } from '@material/react-top-app-bar';
 import { DrawerAppContent } from '@material/react-drawer';
@@ -19,13 +19,12 @@ import Developers from './pages/support/Developers';
 import Contact from './pages/support/Contact';
 
 function App() {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(true);
   return (
     <Router>
       <div className="drawer-container">
-        <Header drawerAction={{ isDrawerOpen, setIsDrawerOpen }} />
+        <Header />
         <TopAppBarFixedAdjust className="top-app-bar-fix-adjust">
-          <SideNav drawerAction={{ isDrawerOpen, setIsDrawerOpen }} />
+          <SideNav />
           <DrawerAppContent className="drawer-app-content">
             <Switch>
               <Route path="/" exact component={Home} />

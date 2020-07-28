@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import TopAppBar, {
   TopAppBarIcon,
   TopAppBarRow,
@@ -9,10 +8,7 @@ import TopAppBar, {
 import MaterialIcon from '@material/react-material-icon';
 import { Link } from 'react-router-dom';
 
-const Header = (props) => {
-  const { drawerAction } = props;
-  const { isDrawerOpen, setIsDrawerOpen } = drawerAction;
-
+const Header = () => {
   return (
     <TopAppBar>
       <TopAppBarRow>
@@ -22,7 +18,7 @@ const Header = (props) => {
               className="inherit-color"
               hasRipple
               icon="menu"
-              onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+              onClick={() => window.dispatchEvent(new CustomEvent('sidenav'))}
             />
           </TopAppBarIcon>
           <Link to="/">
@@ -32,20 +28,6 @@ const Header = (props) => {
       </TopAppBarRow>
     </TopAppBar>
   );
-};
-
-Header.propTypes = {
-  drawerAction: PropTypes.shape({
-    isDrawerOpen: PropTypes.bool,
-    setIsDrawerOpen: PropTypes.func,
-  }),
-};
-
-Header.defaultProps = {
-  drawerAction: {
-    isDrawerOpen: false,
-    setIsDrawerOpen: () => null,
-  },
 };
 
 export default Header;
