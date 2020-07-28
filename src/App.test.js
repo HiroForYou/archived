@@ -3,7 +3,6 @@ import { render } from '@testing-library/react';
 import App from './App';
 
 test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/torchexpo/i);
-  expect(linkElement).toBeInTheDocument();
+  const { getAllByText } = render(<App />);
+  const elements = getAllByText(/TorchExpo/i);
 });

@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { TopAppBarFixedAdjust } from '@material/react-top-app-bar';
 import { DrawerAppContent } from '@material/react-drawer';
-import About from './pages/support/About';
 import Home from './pages/Home';
 import Header from './components/Header';
 import './App.scss';
@@ -36,7 +35,6 @@ function App() {
               <Route path="/publishers" exact component={Publishers} />
               <Route path="/search" exact component={Search} />
 
-              <Route path="/about" exact component={About} />
               <Route path="/publishing" exact component={Publishing} />
               <Route path="/contact" exact component={Contact} />
               <Route path="/developers" exact component={Developers} />

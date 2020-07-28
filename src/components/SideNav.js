@@ -89,27 +89,20 @@ const sideNavItems = [
     items: [
       {
         id: 9,
-        name: 'About',
-        image: null,
-        icon: null,
-        link: '/about',
-      },
-      {
-        id: 10,
         name: 'Publishing',
         image: null,
         icon: null,
         link: '/publishing',
       },
       {
-        id: 11,
+        id: 10,
         name: 'Contact us',
         image: null,
         icon: null,
         link: '/contact',
       },
       {
-        id: 12,
+        id: 11,
         name: 'Developers',
         image: null,
         icon: null,
