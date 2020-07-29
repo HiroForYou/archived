@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Cell, Grid, Row } from '@material/react-layout-grid';
 import LinearProgress from '@material/react-linear-progress';
 import CardType from '../../components/cards/CardType';
+import Models from '../models/Models';
 
 const Publisher = (props) => {
   const publisherId = props.match.params.id; // eslint-disable-line
@@ -27,39 +28,42 @@ const Publisher = (props) => {
   }, [publisherId]);
 
   return (
-    <Grid>
-      <Row>
-        {isLoading && (
-          <Cell
-            desktopColumns={6}
-            tabletColumns={4}
-            phoneColumns={3}
-            align="middle"
-          >
-            <LinearProgress indeterminate />
-            <p align="center">Loading Publisher ...</p>
-          </Cell>
-        )}
-        {publisher && (
-          <Cell desktopColumns={9} phoneColumns={4} tabletColumns={8}>
-            <CardType name="Publisher" icon="people" />
-            <Row>
-              <Cell desktopColumns={9} phoneColumns={3} tabletColumns={6}>
-                <h2>{publisher.name}</h2>
-                <p>{publisher.description}</p>
-              </Cell>
-              <Cell desktopColumns={3} phoneColumns={1} tabletColumns={2}>
-                <img
-                  src={publisher.imageLink}
-                  width="75%"
-                  alt={publisher.name}
-                />
-              </Cell>
-            </Row>
-          </Cell>
-        )}
-      </Row>
-    </Grid>
+    <>
+      <Grid style={{ borderBottom: '1px solid rgba(0, 0, 0, 0.12)' }}>
+        <Row>
+          {isLoading && (
+            <Cell
+              desktopColumns={6}
+              tabletColumns={4}
+              phoneColumns={3}
+              align="middle"
+            >
+              <LinearProgress indeterminate />
+              <p align="center">Loading Publisher ...</p>
+            </Cell>
+          )}
+          {publisher && (
+            <Cell desktopColumns={9} phoneColumns={4} tabletColumns={8}>
+              <CardType name="Publisher" icon="people" />
+              <Row>
+                <Cell desktopColumns={9} phoneColumns={3} tabletColumns={6}>
+                  <h2>{publisher.name}</h2>
+                  <p>{publisher.description}</p>
+                </Cell>
+                <Cell desktopColumns={3} phoneColumns={1} tabletColumns={2}>
+                  <img
+                    src={publisher.imageLink}
+                    width="75%"
+                    alt={publisher.name}
+                  />
+                </Cell>
+              </Row>
+            </Cell>
+          )}
+        </Row>
+      </Grid>
+      <Models publisher={publisher} />
+    </>
   );
 };
 

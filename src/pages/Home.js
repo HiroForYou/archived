@@ -5,13 +5,21 @@ const Home = () => {
   return (
     <Grid>
       <Row>
-        <Cell desktopColumns={10} phoneColumns={4} tabletColumns={8}>
+        <Cell
+          align="middle"
+          desktopColumns={7}
+          phoneColumns={4}
+          tabletColumns={8}
+        >
           <h1>Welcome to TorchExpo</h1>
           <p>
             Collection of trained PyTorch models all under same zoo and ready
             for deployment. TorchExpo is an open initiative and also a project
             created during the PyTorch Summer Hackathon 2020.
           </p>
+        </Cell>
+        <Cell desktopColumns={3} phoneColumns={4} tabletColumns={8}>
+          <img src="/assets/collection.svg" alt="Collection" width="100%" />
         </Cell>
       </Row>
       <Row>
