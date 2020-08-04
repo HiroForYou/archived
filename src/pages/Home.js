@@ -22,12 +22,12 @@ const Home = () => {
           <img src="/assets/collection.svg" alt="Collection" width="100%" />
         </Cell>
       </Row>
-      <Row>
+      {/* <Row>
         <Cell desktopColumns={12} phoneColumns={4} tabletColumns={8}>
           <h2>Browse by Research Area</h2>
           <br />
         </Cell>
-      </Row>
+      </Row> */}
     </Grid>
   );
 };

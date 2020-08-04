@@ -32,68 +32,68 @@ const sideNavItems = [
       },
     ],
   },
-  {
-    name: 'Research Areas',
-    items: [
-      {
-        id: 3,
-        name: 'Vision',
-        image: null,
-        icon: 'visibility',
-        link: '/search?researchArea=Vision',
-      },
-      {
-        id: 4,
-        name: 'Nlp',
-        image: null,
-        icon: 'chat',
-        link: '/search?researchArea=Nlp',
-      },
-      {
-        id: 5,
-        name: 'Audio',
-        image: null,
-        icon: 'audiotrack',
-        link: '/search?researchArea=Audio',
-      },
-      {
-        id: 6,
-        name: 'Generative',
-        image: null,
-        icon: 'grid_on',
-        link: '/search?researchArea=Generative',
-      },
-    ],
-  },
-  {
-    name: 'Model Format',
-    items: [
-      {
-        id: 7,
-        name: 'TorchScript',
-        icon: null,
-        image: 'torchscript.png',
-        link: '/search?modelFormat=torchscript',
-      },
-      {
-        id: 8,
-        name: 'ONNX',
-        icon: null,
-        image: 'onnx.png',
-        link: '/search?modelFormat=onnx',
-      },
-    ],
-  },
+  // {
+  //   name: 'Research Areas',
+  //   items: [
+  //     {
+  //       id: 3,
+  //       name: 'Vision',
+  //       image: null,
+  //       icon: 'visibility',
+  //       link: '/search?researchArea=Vision',
+  //     },
+  //     {
+  //       id: 4,
+  //       name: 'Nlp',
+  //       image: null,
+  //       icon: 'chat',
+  //       link: '/search?researchArea=Nlp',
+  //     },
+  //     {
+  //       id: 5,
+  //       name: 'Audio',
+  //       image: null,
+  //       icon: 'audiotrack',
+  //       link: '/search?researchArea=Audio',
+  //     },
+  //     {
+  //       id: 6,
+  //       name: 'Generative',
+  //       image: null,
+  //       icon: 'grid_on',
+  //       link: '/search?researchArea=Generative',
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: 'Model Format',
+  //   items: [
+  //     {
+  //       id: 7,
+  //       name: 'TorchScript',
+  //       icon: null,
+  //       image: 'torchscript.png',
+  //       link: '/search?modelFormat=torchscript',
+  //     },
+  //     {
+  //       id: 8,
+  //       name: 'ONNX',
+  //       icon: null,
+  //       image: 'onnx.png',
+  //       link: '/search?modelFormat=onnx',
+  //     },
+  //   ],
+  // },
   {
     name: 'Support',
     items: [
-      {
-        id: 9,
-        name: 'Publishing',
-        image: null,
-        icon: null,
-        link: '/publishing',
-      },
+      // {
+      //   id: 9,
+      //   name: 'Publishing',
+      //   image: null,
+      //   icon: null,
+      //   link: '/publishing',
+      // },
       {
         id: 10,
         name: 'Contact us',
@@ -101,13 +101,13 @@ const sideNavItems = [
         icon: null,
         link: '/contact',
       },
-      {
-        id: 11,
-        name: 'Developers',
-        image: null,
-        icon: null,
-        link: '/developers',
-      },
+      // {
+      //   id: 11,
+      //   name: 'Developers',
+      //   image: null,
+      //   icon: null,
+      //   link: '/developers',
+      // },
     ],
   },
 ];
