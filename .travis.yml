@@ -3,14 +3,11 @@ cache:
   directories:
     - ~/.npm
 node_js:
-  - "8"
   - "10"
   - "12"
-services:
-  - mongodb
 branches:
   only:
     - master
 env:
-  - NODE_ENV=test PORT=3000 MONGO_URI=mongodb://localhost/torchexpo HEADERS_ACCEPT=application/vnd.torchexpo+json;version=1
+  - NODE_ENV=test
 script: npm run validate
