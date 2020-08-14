@@ -1,6 +1,6 @@
 # TorchExpo Frontend
 
-<img src="https://img.shields.io/github/license/torchexpo/torchexpo?style=flat-square"
+<img src="https://img.shields.io/github/license/torchexpo/frontend?style=flat-square"
    alt="License">
 <img src="https://img.shields.io/travis/torchexpo/torchexpo?style=flat-square" alt="Build Status">
 

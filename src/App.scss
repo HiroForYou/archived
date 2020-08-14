@@ -64,11 +64,11 @@ a:visited {
 }
 
 .material-icons:not(.inherit-color) {
-  color: #ed4b2b !important;
+  color: #812CE5 !important;
 }
 
 $mdc-theme-primary: #212121;
-$mdc-theme-secondary: #ed4b2b;
+$mdc-theme-secondary: #812CE5;
 
 @import '@material/react-button/index';
 @import '@material/react-card/index';
