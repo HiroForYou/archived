@@ -16,6 +16,12 @@
 
 ### Installation
 
+```shell script
+git clone https://github.com/torchexpo/frontend.git
+OR
+git clone https://github.com/<YOUR_GITHUB_USERNAME>/frontend.git
+```
+
 ## Contributing
 
 We appreciate all contributions. If you are planning to contribute back bug-fixes, please do so
