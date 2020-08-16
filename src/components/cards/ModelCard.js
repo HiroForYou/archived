@@ -4,6 +4,7 @@ import { Cell, Row } from '@material/react-layout-grid';
 import Card, { CardPrimaryContent } from '@material/react-card';
 import MaterialIcon from '@material/react-material-icon';
 import CardType from './CardType';
+import utils from '../../utils/utils';
 
 const ModelCard = (props) => {
   const { model } = props;
@@ -13,7 +14,7 @@ const ModelCard = (props) => {
       <CardPrimaryContent>
         <CardType
           name={task[0].name}
-          icon="visibility"
+          icon={utils.getModelTypeIcon(task[0].name)}
           padding="16px 16px 0px 16px"
         />
         <Row style={{ padding: '16px' }}>
