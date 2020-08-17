@@ -50,54 +50,65 @@ const Model = (props) => {
                 name={model.task[0].name}
                 icon={utils.getModelTypeIcon(model.task[0].name)}
               />
-              <h2>{model.name}</h2>
-              <MaterialIcon
-                className="inherit-color"
-                style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
-                icon="people"
-              />
-              <span>
-                {model.publisher.length > 0 && model.publisher[0].name}
-              </span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <MaterialIcon
-                className="inherit-color"
-                style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
-                icon="schedule"
-              />
-              <span>{new Date(model.updatedAt).toLocaleDateString()}</span>
-              <p>{model.description}</p>
-              <br />
-              <Button
-                outlined
-                icon={<MaterialIcon icon="code" />}
-                href={model.sourceLink}
-                target="_blank"
-              >
-                Source Link
-              </Button>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <Button
-                outlined
-                icon={<MaterialIcon icon="book" />}
-                href={model.paperLink}
-                target="_blank"
-              >
-                Paper Link
-              </Button>
-              <br />
-              <br />
-              <Button
-                style={{
-                  backgroundColor: '#812CE5',
-                  paddingLeft: '2.5rem',
-                  paddingRight: '2.5rem',
-                }}
-                raised
-                href={model.downloadLink}
-              >
-                Download Model
-              </Button>
+              <Row>
+                <Cell desktopColumns={5} phoneColumns={3} tabletColumns={6}>
+                  <h2>{model.name}</h2>
+                  <MaterialIcon
+                    className="inherit-color"
+                    style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
+                    icon="people"
+                  />
+                  <span>
+                    {model.publisher.length > 0 && model.publisher[0].name}
+                  </span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <MaterialIcon
+                    className="inherit-color"
+                    style={{ verticalAlign: 'middle', paddingRight: '0.5rem' }}
+                    icon="schedule"
+                  />
+                  <span>{new Date(model.updatedAt).toLocaleDateString()}</span>
+                  <p>{model.description}</p>
+                  <br />
+                  <Button
+                    outlined
+                    icon={<MaterialIcon icon="code" />}
+                    href={model.sourceLink}
+                    target="_blank"
+                  >
+                    Source Link
+                  </Button>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <Button
+                    outlined
+                    icon={<MaterialIcon icon="book" />}
+                    href={model.paperLink}
+                    target="_blank"
+                  >
+                    Paper Link
+                  </Button>
+                  <br />
+                  <br />
+                  <Button
+                    style={{
+                      backgroundColor: '#812CE5',
+                      paddingLeft: '5rem',
+                      paddingRight: '5rem',
+                    }}
+                    raised
+                    href={model.downloadLink}
+                  >
+                    {`Download (${model.size} MB)`}
+                  </Button>
+                </Cell>
+                <Cell desktopColumns={3} phoneColumns={1} tabletColumns={2}>
+                  <img
+                    src={model.imageLink}
+                    className="model-image"
+                    alt={model.name}
+                  />
+                </Cell>
+              </Row>
             </Cell>
           )}
         </Row>

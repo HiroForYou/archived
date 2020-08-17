@@ -47,8 +47,10 @@ h5 {
   padding: 0 8px;
 }
 
-.publisher-image {
+.publisher-image,
+.model-image {
   width: 100%;
+  height: auto;
 }
 
 .truncate {
