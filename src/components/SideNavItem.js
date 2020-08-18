@@ -7,7 +7,28 @@ import { Link } from 'react-router-dom';
 const SideNavItem = (props) => {
   const { item, selectedIndex } = props;
   const { id, name, image, icon, link } = item;
-  return (
+  return link.includes('http') ? (
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      <ListItem
+        selected={id === selectedIndex}
+        onClick={() => window.dispatchEvent(new CustomEvent('sidenav'))}
+      >
+        {icon ? (
+          <ListItemGraphic graphic={<MaterialIcon icon={icon} />} />
+        ) : (
+          <></>
+        )}
+        {image ? (
+          <ListItemGraphic
+            graphic={<img src={`/assets/${image}`} alt={name} />}
+          />
+        ) : (
+          <></>
+        )}
+        <ListItemText primaryText={name} />
+      </ListItem>
+    </a>
+  ) : (
     <Link to={link}>
       <ListItem
         selected={id === selectedIndex}

@@ -85,24 +85,43 @@ const sideNavItems = [
   //   ],
   // },
   {
+    name: 'Mobile',
+    items: [
+      {
+        id: 9,
+        name: 'Android',
+        image: 'android.png',
+        icon: null,
+        link: 'https://rebrandly.com/torchexpo-android',
+      },
+      // {
+      //   id: 10,
+      //   name: 'iOS',
+      //   image: 'ios.png',
+      //   icon: null,
+      //   link: 'https://rebrandly.com/torchexpo-ios',
+      // },
+    ],
+  },
+  {
     name: 'Support',
     items: [
       // {
-      //   id: 9,
+      //   id: 11,
       //   name: 'Publishing',
       //   image: null,
       //   icon: null,
       //   link: '/publishing',
       // },
       {
-        id: 10,
+        id: 12,
         name: 'Contact us',
         image: null,
         icon: null,
         link: '/contact',
       },
       // {
-      //   id: 11,
+      //   id: 13,
       //   name: 'Developers',
       //   image: null,
       //   icon: null,
