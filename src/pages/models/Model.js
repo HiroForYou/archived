@@ -98,7 +98,7 @@ const Model = (props) => {
                     raised
                     href={model.downloadLink}
                   >
-                    {`Download (${model.size} MB)`}
+                    {`Download (${model.size}MB)`}
                   </Button>
                 </Cell>
                 <Cell desktopColumns={3} phoneColumns={1} tabletColumns={2}>
