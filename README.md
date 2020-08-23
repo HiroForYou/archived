@@ -1,8 +1,7 @@
 # TorchExpo Frontend
 
-<img src="https://img.shields.io/github/license/torchexpo/frontend?style=flat-square"
-   alt="License">
-<img src="https://img.shields.io/travis/torchexpo/torchexpo?style=flat-square" alt="Build Status">
+![License](https://img.shields.io/github/license/prabhuomkar/frontend)
+[![Build Status](https://travis-ci.com/torchexpo/android.svg?branch=master)](https://travis-ci.com/prabhuomkar/frontend)
 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
