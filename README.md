@@ -1,7 +1,7 @@
 # TorchExpo Frontend
 
 ![License](https://img.shields.io/github/license/prabhuomkar/frontend)
-[![Build Status](https://travis-ci.com/torchexpo/frontend.svg?branch=master)](https://travis-ci.com/prabhuomkar/frontend)
+[![Build Status](https://travis-ci.com/prabhuomkar/frontend.svg?branch=master)](https://travis-ci.com/prabhuomkar/frontend)
 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
