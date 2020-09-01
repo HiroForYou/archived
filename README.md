@@ -1,5 +1,6 @@
 <h1 align="center">
- <img src="https://raw.githubusercontent.com/torchexpo/torchexpo/master/docs/source/_static/img/banner.png" alt="TorchExpo Logo" />
+ <img src="https://raw.githubusercontent.com/torchexpo/torchexpo/master/docs/source/_static/img/banner.png" alt="TorchExpo Logo" width="50%" align="center" />
+ Frontend
 </h1>
 
 <p align="center">
@@ -8,7 +9,7 @@
  <a href="LICENSE"><img src="https://img.shields.io/github/license/prabhuomkar/frontend" alt="License"></a>
 </p>
 
-TorchExpo is a collection of models and extensions for mobile deployment in PyTorch
+
 
 - [Installation](#installation)
 - [Resources](#resources)
