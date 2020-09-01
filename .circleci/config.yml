@@ -22,7 +22,7 @@ jobs:
     docker:
       - image: circleci/node:12.9.1-browsers
     <<: *defaults
-  node_12:
+  node_13:
     docker:
       - image: circleci/node:13.14.0-browsers
     <<: *defaults
