@@ -3,7 +3,7 @@ defaults: &defaults
     - checkout
     - run:
         name: Install dependencies
-        command: npm run install
+        command: npm install
     - run: 
         name: Run Linter
         command: npm run lint
