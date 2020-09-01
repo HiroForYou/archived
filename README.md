@@ -9,8 +9,6 @@
  <a href="LICENSE"><img src="https://img.shields.io/github/license/prabhuomkar/frontend" alt="License"></a>
 </p>
 
-
-
 - [Installation](#installation)
 - [Resources](#resources)
 - [Contributing](#contributing)
