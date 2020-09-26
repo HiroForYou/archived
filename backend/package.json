@@ -1,0 +1,63 @@
+{
+  "name": "torchexpo",
+  "version": "1.1.0-alpha",
+  "description": "Collection of trained PyTorch models ready for deployment",
+  "author": "Omkar Prabhu <prabhuomkar@pm.me>",
+  "main": "src/index.js",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node ./src/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon ./src/index.js",
+    "lint": "eslint ./src/ --ignore-path .gitignore",
+    "lint:fix": "prettier --write . && npm run lint --fix",
+    "test": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 20000 --exit --recursive src/tests",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "validate": "npm run lint && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:torchexpo/backend.git"
+  },
+  "keywords": [
+    "API",
+    "pytorch",
+    "hackathon",
+    "backend",
+    "torchexpo",
+    "models"
+  ],
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.17.0",
+    "compression": "^1.6.2",
+    "cors": "^2.8.3",
+    "cross-env": "^6.0.3",
+    "dotenv-safe": "^6.0.0",
+    "express": "^4.15.2",
+    "helmet": "^3.5.0",
+    "http-status-codes": "^1.4.0",
+    "joi": "^10.4.1",
+    "lodash": "^4.17.4",
+    "method-override": "^3.0.0",
+    "moment-timezone": "^0.5.13",
+    "mongoose": "^5.2.17",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "chai-as-promised": "^7.1.1",
+    "coveralls": "^3.0.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^12.0.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^6.2.2",
+    "nodemon": "^2.0.1",
+    "nyc": "^14.1.1",
+    "prettier": "^2.0.5",
+    "supertest": "^4.0.2"
+  }
+}
