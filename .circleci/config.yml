@@ -4,7 +4,7 @@ defaults: &defaults
     - run:
         name: Install dependencies
         command: npm install
-    - run: 
+    - run:
         name: Run Linter
         command: npm run lint
     - run:

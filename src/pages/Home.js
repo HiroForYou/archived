@@ -5,29 +5,23 @@ const Home = () => {
   return (
     <Grid>
       <Row>
-        <Cell
-          align="middle"
-          desktopColumns={7}
-          phoneColumns={4}
-          tabletColumns={8}
-        >
-          <h1>Welcome to TorchExpo</h1>
+        <Cell desktopColumns={12} tabletColumns={8} phoneColumns={4}>
+          <h1>TorchExpo Beta Release is under construction</h1>
+          <h2>
+            Thanks for your interest, public beta will be released in October.
+            Stay tuned!
+          </h2>
           <p>
-            Collection of trained PyTorch models all under same zoo and ready
-            for deployment. TorchExpo is an open initiative and also a project
-            created during the PyTorch Summer Hackathon 2020.
+            Contact
+            {" "}
+            <a style={{ color: '#812ce5' }} href="mailto:prabhuomkar@pm.me">
+              prabhuomkar@pm.me
+            </a>
+            {" "}
+            in case if you have any queries
           </p>
         </Cell>
-        <Cell desktopColumns={3} phoneColumns={4} tabletColumns={8}>
-          <img src="/assets/collection.svg" alt="Collection" width="100%" />
-        </Cell>
       </Row>
-      {/* <Row>
-        <Cell desktopColumns={12} phoneColumns={4} tabletColumns={8}>
-          <h2>Browse by Research Area</h2>
-          <br />
-        </Cell>
-      </Row> */}
     </Grid>
   );
 };

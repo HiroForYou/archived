@@ -26,15 +26,15 @@ git clone https://github.com/<YOUR_GITHUB_USERNAME>/frontend.git
 
 ## Resources
 
-* [Documentation](https://torchexpo.rtfd.io)
-* [TorchExpo Twitter](https://twitter.com/torchexpo)
-* [TorchExpo Blog](https://medium.com/torchexpo)
-* [TorchExpo YouTube](https://www.youtube.com/channel/UCR76Qj9S9h-gAH9RSnJ6u8g)
+- [Documentation](https://torchexpo.rtfd.io)
+- [TorchExpo Twitter](https://twitter.com/torchexpo)
+- [TorchExpo Blog](https://medium.com/torchexpo)
+- [TorchExpo YouTube](https://www.youtube.com/channel/UCR76Qj9S9h-gAH9RSnJ6u8g)
 
 ## Contributing
 
 We appreciate all contributions. If you are planning to contribute back bug-fixes, please do so
-without any further discussion.  
+without any further discussion.
 
 If you plan to contribute new features, utility functions or any application upgrades, please first
 open an issue and discuss the feature with us.
